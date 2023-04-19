@@ -44,3 +44,7 @@ resource "azurerm_network_security_group" "nsg1" {
       }
     }
 }
+resource "azurerm_subnet_network_security_group_association" "subnet_network_dns_association" {
+  network_security_group_id = module.network_security_group.id
+  subnet_id                 = module.subnet.id
+}
